@@ -1,0 +1,22 @@
+<mvc:View controllerName="com.mainproject.HTML5Module.controller.Tiles" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:l = "sap.ui.layout"
+displayBlock="true" 
+xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+                     <content>
+                     <l:VerticalLayout class="sapUiContentPadding">
+                     <l:HorizontalLayout class="sapUiContentPadding" content = "{tiles>/}" allowWrapping = "true">
+                     <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{tiles>title}" press="press(${tiles>route})" >
+                     </GenericTile>
+                     </l:HorizontalLayout>
+                     </l:VerticalLayout>
+                     </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

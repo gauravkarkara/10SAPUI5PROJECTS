@@ -1,0 +1,54 @@
+<mvc:View controllerName="com.mainproject.HTML5Module.controller.Countdown.Countdown" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:l = "sap.ui.layout"
+xmlns:core="sap.ui.core"
+xmlns:grid="sap.ui.layout.cssgrid"
+displayBlock="true" 
+xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>titlecountdown}">
+                     <content>
+                     <grid:CSSGrid 
+                     id="grid1"
+			         gridTemplateRows="auto"
+			         gridTemplateColumns="1fr"
+			         gridGap="1rem"
+                     >
+                     <Image src="data:image/jpeg;base64,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"  />
+                     </grid:CSSGrid>
+
+                     <grid:CSSGrid 
+                     id="grid2"
+			         gridTemplateRows="auto"
+			         gridTemplateColumns="1fr 1fr 1fr 1fr"
+			         gridGap="1rem"
+                     >
+                     <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Days">
+		                 <TileContent >
+			                  <NumericContent value="{Counter>/days}" withMargin="false" valueColor="Critical" />
+		                 </TileContent>
+	                 </GenericTile>
+                     <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Hours">
+		                 <TileContent >
+			                  <NumericContent value="{Counter>/hours}" withMargin="false" valueColor="Error" />
+		                 </TileContent>
+	                 </GenericTile>
+                     <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Minutes">
+		                 <TileContent >
+			                  <NumericContent value="{Counter>/minutes}" withMargin="false" valueColor="Good" />
+		                 </TileContent>
+	                 </GenericTile>
+                     <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Seconds">
+		                 <TileContent >
+			                  <NumericContent value="{Counter>/seconds}" withMargin="false" />
+		                 </TileContent>
+	                 </GenericTile>
+                     </grid:CSSGrid>
+                     </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

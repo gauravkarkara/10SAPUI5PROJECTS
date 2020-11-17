@@ -1,0 +1,49 @@
+<mvc:View controllerName="com.mainproject.HTML5Module.controller.CovidTracker.CovidTracker" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:viz="sap.viz.ui5.controls"
+xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+xmlns:viz.data="sap.viz.ui5.data"
+xmlns:l = "sap.ui.layout"
+xmlns:core="sap.ui.core"
+displayBlock="true" 
+xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>titlecovidtracker}">
+                     <content>
+                     <Panel class="panelStyle" expandable="true" expanded="true" headerText="Covid Data" width="auto">
+                <content>
+                     <Button text = "Latest Covid Figures - List View" press="onPressList"></Button>
+                     <Button text = "Latest Covid Figures - Pie Chart" press="onPressGraph"></Button>
+                </content>
+            </Panel>
+                <viz:Popover id="idPopOver"></viz:Popover>
+                <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='line'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{/data}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="Day"
+                                value="{day}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Total Cases"
+                                value="{summary/total}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="Total Cases" />
+                    <viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension"
+                        values="Day" />
+                </viz:feeds>
+            </viz:VizFrame>
+                </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
